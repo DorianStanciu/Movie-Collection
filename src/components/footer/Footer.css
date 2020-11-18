@@ -1,0 +1,40 @@
+.footer {
+  height: 60vh;
+  background-color: #131517;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-left {
+  width: 60%;
+  height: 40vh;
+  margin-top: 10vh;
+}
+
+.footer-left h2 {
+  color: white;
+  font-size: 36px;
+}
+
+.footer-left p {
+  color: white;
+  padding-top: 20px;
+  font-size: 18px;
+}
+
+.footer-left a {
+  font-style: italic;
+  color: grey;
+}
+
+.footer_right {
+  width: 40%;
+  height: 40vh;
+  margin-top: 10vh;
+}
+
+.footer-right img {
+  height: 20vh;
+  margin-top: 10vh;
+}
