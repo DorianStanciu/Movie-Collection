@@ -15,9 +15,9 @@ export default class Footer extends Component {
                 <div className='footer-right'>
                     <img src={footerLogo}/>
                     <div className='credits'>
-                    <i class="fab fa-twitter i1"></i>
-                    <i class="fab fa-facebook-f i2"></i>
-                    <i class="fas fa-code i3"></i>
+                    <a href='https://twitter.com/themoviedb' target='get_blank'><i class="fab fa-twitter i1"></i></a>
+                    <a href='https://www.facebook.com/themoviedb' target='get_blank'><i class="fab fa-facebook-f i2"></i></a>
+                    <a href='https://www.themoviedb.org/documentation/api' target='get_blank'><i class="fas fa-code i3"></i></a>
                     </div>
                 </div>
             </div>

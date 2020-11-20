@@ -7,10 +7,12 @@ import Home from './components/home/Home';
 function App() {
   return (
     <Router>
-      <Home />
+    <Home />
     </Router>
     )
 }
 
 
 export default App;
+
+

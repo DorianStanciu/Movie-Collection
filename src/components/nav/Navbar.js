@@ -4,12 +4,25 @@ import './Navbar.css';
 import Logo from './favicon.png';
 import { Link } from 'react-router-dom';
 import Searchbar from './searchbar/Searchbar';
+import Axios from 'axios';
 
 class Navbar extends Component {
-    state = { clicked: false }
+    state = { 
+        movies: [],
+        loading: false,
+        clicked: false
+    }
 
     handleClick = () => {
         this.setState({ clicked: !this.state.clicked })
+    }
+
+    searchMovies = async text => {
+        const res = await Axios.get(
+            `https://api.themoviedb.org/3/search/company?api_key=${process.env.REACT_APP_TMDB_API_KEY}&query=${text}&page=1`
+        );
+
+        this.setState({ movies: res.data.items, loading: false})
     }
 
     render() {
@@ -22,7 +35,7 @@ class Navbar extends Component {
                     <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
                 </div>
                 <div className='searchbar'>
-                    <Searchbar />
+                    <Searchbar searchMovies={this.searchMovies}/>
                 </div>
                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
                     {MenuItems.map((item, index) => {
