@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './HomeContent.css';
-import MovieItem from '../../search-results/MovieItem';
+import Movies from '../../search-results/Movies';
 
 class HomeContent extends Component {
     render() {
         return (
             <div className='homecontent'>
-                <MovieItem />
+                <Movies />
             </div>
         )
     }

@@ -23,7 +23,6 @@ class Home extends Component {
     render() {
         return (
             <div className='home'>
-                <Navbar/>
                 <HomeContent />
                 <Footer />
             </div>
