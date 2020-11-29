@@ -14,6 +14,10 @@ class Searchbar extends Component {
 
     onChange = e => this.setState({ [e.target.name]: e.target.value});
 
+    searchMovies = text => {
+        console.log(text);
+    };
+
 render() {
 return(
     <div className='searchbar-input'>

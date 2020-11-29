@@ -5,19 +5,9 @@ import './Home.css';
 import Footer from '../footer/Footer';
 import HomeContent from './HomeContent/HomeContent';
 import axios from 'axios';
+import Spinner from './Spinner';
 
 class Home extends Component {
-    /*
-    async componentDidMount() {
-
-        //this.setState({ loading: true});
-
-        const res = await axios.get(`https://api.themoviedb.org/3/movie/latest?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`);
-        console.log(res.data);
-    }
-
-
-    */
 
     render() {
         return (

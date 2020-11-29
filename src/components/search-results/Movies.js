@@ -1,35 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
 import MovieItem from './MovieItem';
+import Spinner from '../home/Spinner';
 
-class Movies extends Component {
-    state = {
-        movies: [
-            {
-                id: 'id',
-                login: 'mojombo1',
-                avatar_url: 'https://avatars0.githubusercontent.com/u/1?v=4',
-                html_url: 'https://github.com/mojombo',
-            },
-            {
-                id: 'id',
-                login: 'mojombo2',
-                avatar_url: 'https://avatars0.githubusercontent.com/u/1?v=4',
-                html_url: 'https://github.com/mojombo',
-            },
-            {
-                id: 'id',
-                login: 'mojombo3',
-                avatar_url: 'https://avatars0.githubusercontent.com/u/1?v=4',
-                html_url: 'https://github.com/mojombo',
-            }
+const Movies = ({ movies, loading}) => {
 
-        ]
-    }
-
-    render() {
+    if(loading) {
+        return <Spinner />
+    }else {
         return (
             <div style={movieStyle}>
-                {this.state.movies.map(movie => (
+                {movies.map(movie => (
                     <MovieItem key={movie.id} movie={movie} />
                 ))}
             </div>
