@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Fragment, Component } from 'react';
 import './App.css';
 import Navbar from './components/nav/Navbar';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
@@ -23,9 +23,13 @@ class App extends Component {
 
   render() {
   return (
-    <div className='app'>
-      <Alert alert={this.state.alert} />
-    </div>
+    <Router>
+      <div className='app'>
+      <Switch>
+        <Route exact path='/' render={} />
+      </Switch>
+      </div>
+    </Router>
     )
   }
 }
