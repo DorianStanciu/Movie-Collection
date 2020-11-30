@@ -6,26 +6,25 @@ import Home from './components/home/Home';
 import Movies from './components/search-results/Movies';
 import axios from 'axios';
 import HomeContent from './components/home/HomeContent/HomeContent';
+import Searchbar from './components/nav/searchbar/Searchbar';
+import Alert from './components/nav/searchbar/Alert';
 
 class App extends Component {
 
   state = {
     movies: [],
-    loading: false
+    loading: false,
+    alert: null
   }
 
-  async componentDidMount(){
-    this.setState({loading: true});
+  setAlert = (msg, type) => {
+    this.setState({ alert: { msg,type }});
+}
 
-    const res = await axios.get('https://api.github.com/users');
-
-    this.setState({ movies: res.data, loading: false});
-  }
   render() {
   return (
-    <div>
-      <Navbar />
-      <Movies loading={this.state.loading} movies={this.state.movies} />
+    <div className='app'>
+      <Alert alert={this.state.alert} />
     </div>
     )
   }
@@ -41,6 +40,8 @@ export default App;
     </Router>
     )
 }
+
+<Movies loading={this.state.loading} movies={this.state.movies} />
 
 */
 

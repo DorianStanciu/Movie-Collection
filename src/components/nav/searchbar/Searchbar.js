@@ -8,20 +8,21 @@ class Searchbar extends Component {
 
     onSubmit = e => {
         e.preventDefault();
+        if(this.state.text === '') {
+            this.props.setAlert('Please enter something', 'light');
+        }else{
+            this.props.searchMovies(this.state.text);
+        }
         this.props.searchMovies(this.state.text);
         this.setState({ text: ''});
     }
 
     onChange = e => this.setState({ [e.target.name]: e.target.value});
 
-    searchMovies = text => {
-        console.log(text);
-    };
-
 render() {
 return(
     <div className='searchbar-input'>
-        <form onSubmit={this.onSubmit} className='form'>
+        <form onSubmit={this.onSubmit.bind(this)} className='form'>
 <input
 type='text'
 name='text'

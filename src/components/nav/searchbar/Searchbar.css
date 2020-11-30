@@ -16,3 +16,10 @@
   cursor: pointer;
   outline: none;
 }
+
+.alert-light {
+  color: red;
+  background-color: black;
+  height: 10vh;
+  width: 100%;
+}
